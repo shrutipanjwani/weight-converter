@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html Lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<title>Weight Converter</title>
+</head>
+<style type="text/css">
+	body{
+		margin-top: 70px;
+		background: #333;
+		color: #fff;
+	}
+</style>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-center mb-3">
+					Weight Converter
+				</h1>
+				<form>
+					<div class="form-group">
+						<input id="IbsInput" type="number" name="" class=" form-control form-control-lg" placeholder="Enter Pounds...">
+					</div>
+				</form>
+				<div id="output">
+					<div class="card card-primary mb-2">
+						<div class="card-block">
+							<h4>Grams:</h4>
+							<div id="gramsOutput">	
+							</div>
+						</div>
+					</div>
+
+					<div class="card card-success mb-2">
+						<div class="card-block">
+							<h4>KiloGrams:</h4>
+							<div id="kgOutput">	
+							</div>
+						</div>
+					</div>
+
+					<div class="card card-danger mb-2">
+						<div class="card-block">
+							<h4>Ounces:</h4>
+							<div id="ozOutput">	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		document.getElementById('output').style.visibility = 'hidden';
+		document.getElementById('IbsInput').addEventListener('input', function (e) {
+			document.getElementById('output').style.visibility = 'visible';
+			let Ibs = e.target.value;
+			document.getElementById('gramsOutput').innerHTML = Ibs/0.0022046;
+			document.getElementById('kgOutput').innerHTML = Ibs/2.2046;
+			document.getElementById('ozOutput').innerHTML = Ibs*16;
+		});
+	</script>
+</body>
+</html>
